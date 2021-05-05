@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/userProfile-styles.css" rel="stylesheet">
+        <title>Searched Profile</title>
+        <script type = "text/javascript" src="/egrcn/static/searchedProfile.js"></script>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li id="profile"><a href="userProfile.html">My Profile</a></li>
+            <li><a href="userSearch.html">User Search</a></li>
+            <li style="float:right"><a href="signIn.html">Sign Out</a></li>
+            <li style="float:right" id="adminTools" hidden><a href="adminTools.html">Admin Tools</a></li>
+            <li style="float:right" id="progTools" hidden><a href="programTools.html">Program Tools</a></li>
+        </ul>
+
+        <br>
+
+        <div class='profile-container'>
+            
+            <div id='name-email'>
+                <div id='name-field'></div>
+                <div id='email-field'></div>
+                <div id='id-field'></div>
+                <div id='program-field'></div>
+            </div>
+
+            <br><hr><br>
+
+            <div id='milestone-div'>
+                <table id='milestone-table'></table>
+            </div>
+
+            <div id='admin-div' hidden>
+                <br><hr><br>
+		<h2>Add a Milestone</h2>
+                <div id='add-milestone'>
+		    <label>Company Name</label>
+                    <input id='company-name'>
+
+                    <label>Milestone Type</label>
+		    <select id='milestone-type'>
+			<option value="Internship">Internship</option>
+			<option value="Job Offer">Job Offer</option>
+			<option value="Co-Op">Co-Op</option>
+			<option value="Research">Research</option>
+			<option value="Work Experience">Work Experience</option>
+		    </select>
+
+		    <label>Visibility</label>
+		    <select id='vis-type'>
+		        <option value="PRIVATE">PRIVATE</option>
+			<option value="PUBLIC">PUBLIC</option>
+		    </select>
+
+		    <button id='add-btn' onclick='addMilestone()'>Add Milestone</button>
+		</div>
+
+		<br><hr><br>
+                <button onclick=pullLinkedIn()>Pull from LinkedIn</button>
+
+                <br><hr><br>
+                <button onclick=makeAlumni()>Make User an Alumni</button>
+
+                <br><hr><br>
+                <button onclick=makeAdmin()>Make User an Admin</button>
+            </div>
+
+        </div>
+    </body>
+</html>

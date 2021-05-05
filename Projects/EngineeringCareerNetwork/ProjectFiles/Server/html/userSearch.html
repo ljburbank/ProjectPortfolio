@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/userProfile-styles.css" rel="stylesheet">
+        <title>User Search</title>
+        <script type = "text/javascript" src="/egrcn/static/userSearch.js"></script>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li id="profile"><a href="userProfile.html">My Profile</a></li>
+            <li><a class="active" href="userSearch.html">User Search</a></li>
+            <li style="float:right"><a href="signIn.html">Sign Out</a></li>
+            <li style="float:right" id="adminTools" hidden><a href="adminTools.html">Admin Tools</a></li>
+            <li style="float:right" id="progTools" hidden><a href="programTools.html">Program Tools</a></li>
+        </ul>
+
+        <br>
+        <br>
+        <br>
+
+        <div id='search-field'>
+            <label>Enter the search term here:</label>
+            <input id='search-term' value="">
+            <button id='search-button' onclick=buttonClick()>Search</button>
+        </div>
+
+        <div id='search-body'>
+            <table id='results-table'>
+                <thead id='table-head'>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Link to Profile</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan=5>No Search to Display</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

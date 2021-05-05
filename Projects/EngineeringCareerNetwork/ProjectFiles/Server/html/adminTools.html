@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/userProfile-styles.css" rel="stylesheet">
+        <title>Admin Tools</title>
+        <script type = "text/javascript" src="/egrcn/static/adminTools.js"></script>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="userSearch.html">User Search</a></li>
+            <li style="float:right"><a href="signIn.html">Sign Out</a></li>
+            <li style="float:right"><a class="active" href="adminTools.html">Admin Tools</a></li>
+            <li style="float:right"><a href="programTools.html">Program Tools</a></li>
+        </ul>
+        <div>
+
+            <h2>Verify Milestones</h2>
+
+            <table id='milestone-table'>
+                <thead>
+                    <th>Verified</th>
+                    <th>User ID</th>
+                    <th>Company Name</th>
+                    <th>Milestone Type</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <section hidden id="update-row">
+                <label>Company:</label>
+                <input type="text" id="update-milestone-input">
+                
+                <label>Milestone Type</label>
+                <select id="update-type-input">
+                    <option value="Internship">Internship</option>
+                    <option value="Job Offer">Job Offer</option>
+                    <option value="Co-Op">Co-Op</option>
+                    <option value="Research">Research</option>
+                    <option value="Work Experience">Work Experience</option>
+                </select>
+                
+                <button id="update-row-btn" onclick="updateClick()">Update</button>
+            </section>
+        </div>
+
+        <br><hr><br>
+
+        <div>
+	    <label style="text-align:center;">
+                Pulls LinkedIn data from all accounts with a URL set up. Please wait around 20 seconds after clicking
+                as this takes a while to pull.
+            </label>
+            <button onclick=scrapeAccounts()>Update All LinkedIn</button>
+        </div>
+    </body>
+</html>

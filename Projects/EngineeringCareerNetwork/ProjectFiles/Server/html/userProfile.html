@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/userProfile-styles.css" rel="stylesheet">
+        <title>User Profile</title>
+        <script type = "text/javascript" src="/egrcn/static/userProfile.js"></script>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a class="active" href="userProfile.html">My Profile</a></li>
+            <li><a href="userSearch.html">User Search</a></li>
+            <li style="float:right"><a href="signIn.html">Sign Out</a></li>
+        </ul>
+
+        <div class='profile-container'>
+
+            <div id='name-email'>
+                <div id='name-field'></div>
+                <div id='email-field'></div>
+                <div id='program-field'></div>
+            </div>
+
+            <br><hr><br>
+
+            <div class='user-visibility'>
+                <div id='vis-message'></div>
+                <button onclick=changeVisibility()>Change Visibility</button>
+            </div>
+
+            <br><hr><br>
+
+            <div class='milestone-section'>
+
+                <div id="add-milestone">
+                    <label>Company Name</label>
+                    <input id='company-name'>
+
+                    <label>Milestone Type</label>
+                    <select id='milestone-type'>
+                        <option value="Internship">Internship</option>
+                        <option value="Job Offer">Job Offer</option>
+                        <option value="Co-Op">Co-Op</option>
+                        <option value="Research">Research</option>
+                        <option value="Work Experience">Work Experience</option>
+                    </select>
+
+                    <label>Visibility</label>
+                    <select id='vis-type'>
+                        <option value="PRIVATE">PRIVATE</option>
+                        <option value="PUBLIC">PUBLIC</option>
+                    </select>
+
+                    <button id='add-btn' onclick='addMilestone()'>Add Milestone</button>
+                </div>
+
+                <br>
+
+                <table id='milestone-table'>
+                    <thead>
+                        <th>Company Name</th>
+                        <th>Milestone Type</th>
+                        <th>Visibility</th>
+                        <th>Verified</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <br>
+
+                <section hidden id="update-row">
+                    <label>Company:</label>
+                    <input type="text" id="update-milestone-input">
+                        
+                    <label>Milestone Type</label>
+                    <select id="update-type-input">
+                        <option value="Internship">Internship</option>
+                        <option value="Job Offer">Job Offer</option>
+                        <option value="Co-Op">Co-Op</option>
+                        <option value="Research">Research</option>
+                        <option value="Work Experience">Work Experience</option>
+                    </select>
+
+                    <label>Visibility</label>
+                    <select id="update-vis-input">
+                        <option value="PRIVATE">PRIVATE</option>
+                        <option value="PUBLIC">PUBLIC</option>
+                    </select>
+                    <button id="update-row-btn" onclick="updateClick()">Update</button>
+                </section>
+
+            </div>
+
+            <br><hr><br>
+
+            <div class="linkedin-section">
+                <label>Set Your LinkedIn Profile URL to Pull From Here</label>
+                <input id='linked-in-url'>
+                <button id='update-url' onclick='updateLinkedInURL()'>Set LinkedIn URL</button>
+                <br>OR<br>
+		<label>Pull career experience from your LinkedIn profile. Please wait a few seconds after clicking
+		       as the server takes a few seconds to pull the data and refresh the page.
+                <button id='linked-in-btn' onclick='scrapeLinkedIn(1)'>Pull From LinkedIn</button>
+            </div>
+
+        </div>
+    </body>
+</html>

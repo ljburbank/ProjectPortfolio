@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/programTools-styles.css" rel="stylesheet">
+        <title>Program Tools</title>
+        <script type = "text/javascript" src="/egrcn/static/programTools.js"></script>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="userSearch.html">User Search</a></li>
+            <li style="float:right"><a href="signIn.html">Sign Out</a></li>
+            <li style="float:right"><a href="adminTools.html">Admin Tools</a></li>
+            <li style="float:right"><a class="active" href="programTools.html">Program Tools</a></li>
+        </ul>
+
+        <div class='program-section'>
+
+	    <h2>Manage Programs</h2>
+
+	    <br>
+
+            <table id='milestone-table'>
+                <thead>
+                    <th>Program</th>
+                    <th>Department</th>
+                    <th>College</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+	    <br><hr>
+
+	    <h2>Add A Program/Department/College</h2>
+
+	    <br>
+
+            <div id="add-program">
+                <label>Program Name</label>
+                <input id='program-name'>
+
+                <label>Department</label>
+                <select id='department' onchange=activateInputs()>
+                </select>
+		<input id='new-department' placeholder='If new, specify' value="" disabled>
+
+                <label>College</label>
+                <select id='college' onchange=activateInputs()>
+                </select>
+                <input id='new-college' placeholder='If new, specify' value="" disabled>
+
+                <button id='add-btn' onclick='addProgram()'>Add Program</button>
+            </div>
+        </div>
+    </body>
+</html>

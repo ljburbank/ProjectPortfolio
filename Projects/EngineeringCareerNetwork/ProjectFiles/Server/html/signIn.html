@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/signIn-styles.css" rel="stylesheet">
+        <title>Sign In Page</title>
+        <script type = "text/javascript" src="/egrcn/static/signIn.js"></script>
+    </head>
+
+    <body>
+
+        <div id="title-container">
+
+            <h1>Engineering Career Network</h1>
+            <h3>College of Engineering, Informatics, and Applied Sciences</h3>
+            <h3>Version 1.1 April 26 2021</h3>
+
+        </div>
+
+        <div id="container">
+
+            <h2>Sign In</h2>
+
+            <div id="sign-in-fields">
+                <label for="email-input"><b>Email</b></label>
+                <input id='email-input' value="" placeholder="Email">
+
+                <br>
+
+                <label for="password-input"><b>Password</b></label>
+                <input id='password-input' value="" placeholder="Password"type="password">
+
+                <br>
+
+                <button id='login-btn' onclick="buttonClick()">Log In</button>
+            </div>
+
+            <div id="register-btn">
+                <p>Not registered? <a id="register-link"href="/egrcn/register.html">Create an Account</a></p>
+            </div>
+        </div>
+
+    </body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/egrcn/static/dashboard-styles.css" rel="stylesheet">
+        <title>ECB Dashboard</title>
+        <!-- Include fusioncharts core library -->
+        <script type = "text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+        <!-- Include fusion theme -->
+        <script type = "text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
+        <script type = "text/javascript" src="/egrcn/static/dashboard.js"></script>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a class="active" href="dashboard.html">Dashboard</a></li>
+            <li id="profile"><a href="userProfile.html">My Profile</a></li>
+            <li><a href="userSearch.html">User Search</a></li>
+            <li style="float:right"><a href="signIn.html">Sign Out</a></li>
+            <li style="float:right" id="adminTools" hidden><a href="adminTools.html">Admin Tools</a></li>
+            <li style="float:right" id="progTools" hidden><a href="programTools.html">Program Tools</a></li>
+        </ul>
+
+        <div class="background">
+
+            <div id="filter-select">
+                <select id='graph-filters'>
+                    <option value="pie">Pie Chart</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="pyramid">Pyramid Chart</option>
+                </select>
+
+                <select id='milestone-filters'>
+                    <option value="Milestone">No Milestone Filter</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Job Offer">Job Offer</option>
+                    <option value="Co-Op">Co-Op</option>
+                    <option value="Research">Research</option>
+                    <option value="Work Experience">Work Experience</option>
+                </select>
+                
+                <select id="college" name="college" onchange=loadDepartments()>
+                    <option value="">No College</option>
+                </select>
+
+                <select id="department" name="department" onchange=loadPrograms() disabled>
+                    <option value="">No Department</option>
+                </select>
+
+                <select id="program" name="program" disabled>
+                    <option value="">No Program</option>
+                </select>
+
+                <button id='graph-button' onclick="buttonClick()">Generate Graph</button>
+            </div>
+
+            <hr>
+
+            <div id="graph-container">
+
+            </div>
+        </div>
+    </body>
+</html>
